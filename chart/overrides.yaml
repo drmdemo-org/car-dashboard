@@ -1,16 +1,22 @@
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-replicaCount: 1
-revisionHistoryLimit: 1
 image:
-  repository: mycluster.icp:8500/default/cardashboard
-hpa:
-  enabled: false
-cloud_services:
-  conversation:
-    credentials: <Conversation service instance credentials JSON>
-    workspace: <Conversation Workspace ID>
-  speech_to_text:
-    credentials: <Speech-to-Text service instance credentials JSON>
-  text_to_speech:
-    credentials: <Text-to-Speech service instance credentials JSON>
+    repository: mycluster.icp:8500/default/cardashboard
+  cloud_services:
+    conversation:
+      credentials: '{
+  "url": "https://gateway.watsonplatform.net/conversation/api",
+  "username": "63a497ff-9e34-427e-9173-264e61d8a125",
+  "password": "bjuEmEUu84v4"
+}'
+     workspace: '6518681c-a2e2-436f-8e7c-4b7054795ffd'
+    speech_to_text:
+      credentials: '{
+  "url": "https://stream.watsonplatform.net/speech-to-text/api",
+  "username": "e8bd4e81-b2ba-488e-80fd-44340528f9af",
+  "password": "qe738nSlt4OF"
+}'
+    text_to_speech:
+      credentials: '{
+  "url": "https://stream.watsonplatform.net/text-to-speech/api",
+  "username": "392df4ca-4e50-4dac-b602-17c3a184d826",
+  "password": "1GhUxcE1vNL8"
+}'
